@@ -1,0 +1,283 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+.page {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #fde2e4, #fff1f2, #ede9fe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card {
+  max-width: 720px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  padding: 32px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #e11d48;
+  text-align: center;
+}
+
+.heart {
+  color: #f43f5e;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+
+/*CALENDARIO -------------------------------------*/
+/*Syngle Day calendario de un solo dia */
+.single-day {
+  margin: 24px auto;
+  width: 180px;
+  background: white;
+  border-radius: 20px;
+  padding: 16px 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  text-align: center;
+
+  display: flex;              
+  flex-direction: column;     
+  align-items: center;
+}
+
+
+.week-day {
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  color: #9333ea;
+}
+
+.day-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #e11d48;
+  line-height: 1;
+  margin: 6px 0;
+  box-shadow: #374151;
+}
+
+.month-year {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+
+/* 🎄 Cuenta regresiva Navidad */
+
+.christmas {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #065f46;
+}
+
+.christmas-text strong {
+  color: #b91c1c;
+}
+
+.christmas-tree {
+  font-size: 1.4rem;
+}
+
+/* 🎁 Caja de regalo */
+
+/* 🎁 CONTENEDOR */
+.gift-container {
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* 🎁 CAJA */
+.gift-box {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* 📦 CUERPO */
+.gift-body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* 🎀 CINTAS */
+.gift-ribbon-vertical {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12px;
+  height: 100%;
+  background: #facc15;
+  transform: translateX(-50%);
+}
+
+.gift-ribbon-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: #facc15;
+  transform: translateY(-50%);
+}
+
+/* 🎀 MOÑO */
+.bow {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 24px;
+  z-index: 10;
+}
+
+.bow-left,
+.bow-right {
+  position: absolute;
+  width: 22px;
+  height: 18px;
+  background: linear-gradient(135deg, #fde047, #facc15);
+  border-radius: 50% 50% 0 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.bow-left {
+  left: 0;
+  transform: rotate(-25deg);
+  border-radius: 50% 50% 50% 0;
+}
+
+.bow-right {
+  right: 0;
+  transform: rotate(25deg);
+}
+
+.bow-center {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #eab308;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* TEXTO */
+.gift-message {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+
+
+
+/*Responsil ////////////////////////////////////////////*/
+
+* {
+  box-sizing: border-box;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #e11d48;
+  text-align: center;
+  flex-wrap: wrap;       
+}
+
+/* 📱 MÓVILES */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    gap: 8px;
+  }
+
+  .heart {
+    width: 24px;
+    height: 24px;
+  }
+
+  /*Calendario*/
+
+  .single-day {
+    width: 150px;
+  }
+
+  .day-number {
+    font-size: 2.6rem;
+  }
+
+  /*Cuenta regresiva*/
+  .christmas {
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+
+  .christmas-tree {
+    font-size: 1.2rem;
+  }
+   .gift-box {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* 📲 TABLETS */
+@media (max-width: 768px) {
+  .card {
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 1.9rem;
+  }
+}
