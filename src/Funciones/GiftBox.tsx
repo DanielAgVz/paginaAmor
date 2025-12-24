@@ -3,15 +3,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function GiftBox({ canOpen }: { canOpen: boolean }) {
-  const [clicks, setClicks] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (!canOpen) {
-      setClicks((prev) => prev + 1);
-      return;
-    }
+    if (!canOpen) return;
 
     if (!isOpen) {
       setIsOpen(true);
