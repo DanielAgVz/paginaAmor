@@ -115,27 +115,59 @@ body {
 
 /* 🎁 CONTENEDOR */
 .gift-container {
-  margin-top: 32px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* 🎁 CAJA */
 .gift-box {
   position: relative;
-  width: 90px;
-  height: 90px;
-  margin: 0 auto;
+  width: min(60vw, 180px); /* responsive */
+  aspect-ratio: 6 / 5;    /* mantiene forma */
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+
+.gift-lid {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 18%;
+  background: #e53935;
+  border-radius: 0.6em;
+  z-index: 3;
+}
+
+.gift-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.gift-button {
+  padding: 12px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #ff4081;
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 /* 📦 CUERPO */
 .gift-body {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #dc2626, #ef4444);
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  height: 75%;
+  background: #c62828;
+  border-radius: 0.6em;
 }
+
 
 /* 🎀 CINTAS */
 .gift-ribbon-vertical {
@@ -211,6 +243,105 @@ body {
   font-weight: 700;
   animation: pulse 1.5s infinite;
 }
+
+/*Surprice*/
+.surprise-page {
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.surprise-content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px; /* límite para PC */
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+/*Titulo suprice*/
+.surprise-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  margin-bottom: 32px;
+}
+
+/*Carrusel*/
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.carousel-img {
+  width: min(80vw, 320px);
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.carousel button {
+  background: rgba(255,255,255,0.85);
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.snow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.snow span {
+  position: absolute;
+  top: -10px;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: snow 10s linear infinite;
+}
+
+/* posiciones random */
+.snow span:nth-child(n) {
+  left: calc(100% * var(--i));
+}
+
+.snow span {
+  left: calc(100% * random());
+}
+
+@keyframes snow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(110vh);
+  }
+}
+
 
 @keyframes pulse {
   0% { transform: scale(1); }
@@ -462,6 +593,7 @@ body {
     font-size: 1.6rem;
     gap: 8px;
   }
+
 
   .heart {
     width: 24px;
