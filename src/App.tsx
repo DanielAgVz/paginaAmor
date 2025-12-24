@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
+import { useState } from "react";
 import SingleDay from "./Funciones/SingleDay";
-import GiftBox from "./Funciones/GiftBox"
-import ChristmasCountdown from "./Funciones/ChristmasCountdown"
-
+import GiftBox from "./Funciones/GiftBox";
+import ChristmasCountdown from "./Funciones/ChristmasCountdown";
 
 import "./App.css";
 
 export default function App() {
+  const [canOpenGift, setCanOpenGift] = useState(false);
+
   return (
     <div className="page">
       <motion.div
@@ -25,9 +27,12 @@ export default function App() {
         </header>
 
         <SingleDay />
-        <ChristmasCountdown />
-        <GiftBox />
 
+        <ChristmasCountdown
+          onChristmasReady={() => setCanOpenGift(true)}
+        />
+
+        <GiftBox canOpen={canOpenGift} />
 
         <footer className="footer">
           Hecho con amor infinito para ti ✨

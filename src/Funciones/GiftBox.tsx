@@ -1,9 +1,17 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-export default function GiftBox() {
+export default function GiftBox({ canOpen }: { canOpen: boolean }) {
   const [clicks, setClicks] = useState(0);
   const [openLetter, setOpenLetter] = useState(false);
+
+  const handleClick = () => {
+    if (!canOpen) {
+      setClicks((prev) => prev + 1);
+    } else {
+      setOpenLetter(true);
+    }
+  };
 
   return (
     <>
@@ -18,7 +26,7 @@ export default function GiftBox() {
             duration: 0.5,
             ease: "easeOut",
           }}
-          onClick={() => setClicks((prev) => prev + 1)}
+          onClick={handleClick}
         >
           {/* Moño */}
           <div className="bow">
@@ -35,17 +43,18 @@ export default function GiftBox() {
           <div className="gift-body" />
         </motion.div>
 
-        {/* Texto progresivo */}
-        {clicks < 4 && <p className="gift-message">Tócalo 🎁</p>}
+        {/* ANTES DE NAVIDAD */}
+        {!canOpen && clicks < 4 && (
+          <p className="gift-message">Tócalo 🎁</p>
+        )}
 
-        {clicks >= 4 && (
+        {!canOpen && clicks >= 4 && (
           <div className="gift-after">
             <p className="gift-message">
-              Aún no es diciembre amor 💕
+              Ya faltan horas para que puedas abrirlo amor 💕
             </p>
             <p className="gift-but">Pero…</p>
 
-            {/* Botón carta */}
             <motion.button
               className="letter-button"
               whileHover={{ scale: 1.05 }}
@@ -55,6 +64,13 @@ export default function GiftBox() {
               ✉️
             </motion.button>
           </div>
+        )}
+
+        {/* YA ES NAVIDAD */}
+        {canOpen && (
+          <p className="gift-message">
+            🎄 Ábrelo mi amor 💖
+          </p>
         )}
       </div>
 
@@ -80,13 +96,13 @@ export default function GiftBox() {
               <h3>Para ti, mi amor 💌</h3>
 
               <p>
-                Aunque aún no sea diciembre mi vida , no queria hacerte esperar mas para
-                recordarte cuánto te amo. espero que te guste lo que aparecera 
-                el 24 de Dic mi vida.
+                Ya faltan dos solo horas mi vida hermosa, sabes te amor y
+                quiero recordarte cuánto te amo y que a las 12   
+                podras abrir el regalo mi vida hermosa ❤️
               </p>
 
               <p className="signature">
-                Con todo mi amor mi ❤️
+                Con todo mi amor ❤️
               </p>
 
               <button onClick={() => setOpenLetter(false)}>

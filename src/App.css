@@ -158,6 +158,66 @@ body {
   transform: translateY(-50%);
 }
 
+/* 🎄 RELOJ NAVIDEÑO */
+
+.christmas-clock {
+  margin: 28px 0;
+  text-align: center;
+}
+
+.clock-title {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: #065f46;
+  font-weight: 600;
+}
+
+.clock-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.clock-box {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  border-radius: 18px;
+  padding: 14px 18px;
+  min-width: 90px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock-number {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+}
+
+.clock-label {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #fee2e2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.christmas-ready {
+  font-size: 1.4rem;
+  color: #15803d;
+  font-weight: 700;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 /* 🎀 MOÑO */
 .bow {
   position: absolute;
