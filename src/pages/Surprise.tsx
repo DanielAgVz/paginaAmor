@@ -1,14 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import bg from "../assets/bg-navidad.jpg";
+
 
 const images = [
-  "/src/assets/foto1.jpeg",
-  "/src/assets/foto2.jpeg",
-  "/src/assets/foto3.jpeg",
-  "/src/assets/foto4.jpeg",
-  "/src/assets/foto5.jpeg",
+  "/Img/foto1.jpeg",
+  "/Img/foto2.jpeg",
+  "/Img/foto3.jpeg",
+  "/Img/foto4.jpeg",
+  "/Img/foto5.jpeg",
 ];
+
 
 export default function Surprise() {
   const [index, setIndex] = useState(0);
@@ -25,7 +26,7 @@ export default function Surprise() {
   return (
     <div
       className="surprise-page"
-      style={{ backgroundImage: `url(${bg})` }}
+      style={{ backgroundImage: "url(/bg-navidad.jpg)" }}
     >
       {/* ❄️ NIEVE */}
       <div className="snow">
