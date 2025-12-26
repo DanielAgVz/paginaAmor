@@ -8,12 +8,21 @@ const images = [
   "/Img/foto3.jpeg",
   "/Img/foto4.jpeg",
   "/Img/foto5.jpeg",
+  "/Img/foto6.jpeg",
+  "/Img/foto7.jpeg",
+  "/Img/foto8.jpeg",
+  "/Img/foto9.jpeg",
 ];
 
 
 export default function Surprise() {
   const [index, setIndex] = useState(0);
   const [openLetter, setOpenLetter] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+
 
   const next = () =>
     setIndex((prev) => (prev + 1) % images.length);
@@ -22,6 +31,30 @@ export default function Surprise() {
     setIndex((prev) =>
       prev === 0 ? images.length - 1 : prev - 1
     );
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEndX(null);
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+
+    const distance = touchStartX - touchEndX;
+
+    if (distance > minSwipeDistance) {
+      next(); // swipe izquierda
+    }
+
+    if (distance < -minSwipeDistance) {
+      prev(); // swipe derecha
+    }
+  };
+
 
   return (
     <div
@@ -46,8 +79,16 @@ export default function Surprise() {
           Feliz Navidad <br /> Amor mío 🎄❤️
         </h1>
 
+        <p className="gift-but">Unos pequeños <br /> recuerdo Amor mío</p>
+
         {/* 📸 CARRUSEL */}
-        <div className="carousel">
+        <div
+          className="carousel"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+
           <button onClick={prev}>◀</button>
 
           <motion.img
@@ -64,7 +105,7 @@ export default function Surprise() {
 
         {/* 💌 CARTA */}
         <div className="gift-after">
-          <p className="gift-but">Tengo algo especial para ti 💌</p>
+          <p className="gift-but">Tengo algo especial para ti</p>
 
           <button
             className="letter-button"
@@ -91,10 +132,10 @@ export default function Surprise() {
               exit={{ scale: 0.8, y: 40 }}
               transition={{ duration: 0.4 }}
             >
-              <h3>Feliz Navidad, mi amor 🎄❤️</h3>
+              <h3>❤️🎄 Feliz Navidad, mi amor 🎄❤️</h3>
 
               <p>
-                Gracias mi vida hermosa por compartir tu vida conmigo,  
+                Gracias mi vida hermosa por compartir tu vida conmigo,
                 Hoy celebramos nuestra <strong>cuarta Navidad juntos</strong>,
                 y cada una ha sido más especial que la anterior te amo mi vida hermosa.
               </p>

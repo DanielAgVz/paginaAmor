@@ -64,8 +64,8 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   text-align: center;
 
-  display: flex;              
-  flex-direction: column;     
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -123,8 +123,10 @@ body {
 /* 🎁 CAJA */
 .gift-box {
   position: relative;
-  width: min(60vw, 180px); /* responsive */
-  aspect-ratio: 6 / 5;    /* mantiene forma */
+  width: min(60vw, 180px);
+  /* responsive */
+  aspect-ratio: 6 / 5;
+  /* mantiene forma */
   cursor: pointer;
   margin-top: 15px;
 }
@@ -215,7 +217,7 @@ body {
   border-radius: 18px;
   padding: 14px 18px;
   min-width: 90px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 
   display: flex;
   flex-direction: column;
@@ -244,23 +246,42 @@ body {
   animation: pulse 1.5s infinite;
 }
 
+.surprise-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+
 /*Surprice*/
 .surprise-page {
-  min-height: 100%;
+  width: 100vw;
+  min-height: 100vh;
+
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   position: relative;
   overflow: hidden;
 }
 
+
 .surprise-content {
   position: relative;
   z-index: 2;
+
   min-height: 100vh;
   width: 100%;
-  max-width: 1200px; /* límite para PC */
-  margin: 0 auto;
+  max-width: 1200px;
 
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -268,8 +289,8 @@ body {
 
   padding: 24px;
   text-align: center;
-  box-sizing: border-box;
 }
+
 
 
 /*Titulo suprice*/
@@ -277,7 +298,7 @@ body {
   font-size: 2.8rem;
   font-weight: 800;
   color: white;
-  text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
   margin-bottom: 32px;
 }
 
@@ -286,18 +307,19 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  touch-action: pan-y;
 }
 
 .carousel-img {
   width: min(80vw, 320px);
-  height: 420px;
+  height: 550px;
   object-fit: cover;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .carousel button {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
   border: none;
   border-radius: 50%;
   width: 42px;
@@ -337,6 +359,7 @@ body {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(110vh);
   }
@@ -344,9 +367,17 @@ body {
 
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* 🎀 MOÑO */
@@ -367,7 +398,7 @@ body {
   height: 18px;
   background: linear-gradient(135deg, #fde047, #facc15);
   border-radius: 50% 50% 0 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .bow-left {
@@ -390,7 +421,7 @@ body {
   height: 10px;
   background: #eab308;
   border-radius: 50%;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* TEXTO */
@@ -421,11 +452,9 @@ body {
 
 /* Carta tipo papel */
 .letter-card {
-  background: linear-gradient(
-    to bottom,
-    #fffdf7,
-    #fff8f0
-  );
+  background: linear-gradient(to bottom,
+      #fffdf7,
+      #fff8f0);
   max-width: 420px;
   width: 100%;
   border-radius: 12px;
@@ -498,16 +527,15 @@ body {
 
 .gift-but {
   margin: 6px 0 12px;
-  font-size: 1rem;
-  color: #9333ea;
-  font-weight: 500;
+  font-size: 2rem;
+  color: #000000;
+  font-weight: 800;
 }
 
 /* ---- BOTÓN CARTA ---- */
 
 .letter-button {
-  background: white;
-  border: 2px solid #e11d48;
+  background: rgba(255, 255, 255, 0.126);
   border-radius: 16px;
   font-size: 1.8rem;
   padding: 10px 16px;
@@ -580,7 +608,7 @@ body {
   font-weight: 700;
   color: #e11d48;
   text-align: center;
-  flex-wrap: wrap;       
+  flex-wrap: wrap;
 }
 
 /* 📱 MÓVILES */
@@ -619,9 +647,19 @@ body {
   .christmas-tree {
     font-size: 1.2rem;
   }
-   .gift-box {
+
+  .gift-box {
     width: 70px;
     height: 70px;
+  }
+
+  carousel button {
+    display: none; /* Oculta botones en celular */
+  }
+
+  .carousel-img {
+    width: min(80vw, 320px);
+  height: 550px;
   }
 }
 
