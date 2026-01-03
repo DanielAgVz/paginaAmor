@@ -7,7 +7,7 @@ import ChristmasCountdown from "../Funciones/ChristmasCountdown";
 
 import "../App.css";
 import "../styles/blobButton.css";
-import "../styles/bottonfindeaño.css";
+import "../styles/bottonfindeano.css";
 
 
 export default function Home() {
