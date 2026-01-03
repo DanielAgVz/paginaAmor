@@ -1,20 +1,18 @@
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import SingleDay from "../Funciones/SingleDay";
-import GiftBox from "../Funciones/GiftBox";
 import ChristmasCountdown from "../Funciones/ChristmasCountdown";
 
 import "../App.css";
-
-const DEV_FORCE_OPEN = true; // ⬅️ SOLO para pruebas
+import "../styles/blobButton.css";
+import "../styles/bottonfindeaño.css";
 
 
 export default function Home() {
-  //const [canOpenGift, setCanOpenGift] = useState(false);
 
-  const [canOpenGift, setCanOpenGift] = useState(DEV_FORCE_OPEN);
+  const navigate = useNavigate();
 
   return (
     <div className="page">
@@ -24,6 +22,7 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="card"
       >
+        {/* HEADER */}
         <header className="header">
           <h1 className="title">
             <Heart className="heart" size={32} />
@@ -32,14 +31,82 @@ export default function Home() {
           </h1>
         </header>
 
+        {/* CONTENIDO */}
         <SingleDay />
 
-        <ChristmasCountdown
-          onChristmasReady={() => setCanOpenGift(true)}
-        />
+        <ChristmasCountdown onChristmasReady={() => { }} />
 
-        <GiftBox canOpen={canOpenGift} />
+        {/* BOTÓN BLOB CON NIEVE */}
+        <div className="buttons">
+          <button
+            className="blob-btn"
+            onClick={() => navigate("/sorpresa")}
+          >
+            Ver día 24 Dic 2025
 
+            {/* BLOB */}
+            <span className="blob-btn__inner">
+              <span className="blob-btn__blobs">
+                <span className="blob-btn__blob"></span>
+                <span className="blob-btn__blob"></span>
+                <span className="blob-btn__blob"></span>
+                <span className="blob-btn__blob"></span>
+              </span>
+            </span>
+
+            {/* ❄️ NIEVE DENTRO DEL BOTÓN */}
+            <span className="blob-btn__snow">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+
+          
+        <button 
+             className="firework-btn"
+             onClick={() => navigate("/fin-de-ano")}>
+          Ver día 31 Dic 2025
+
+          {/* 🎆 FUEGOS ARTIFICIALES */}
+          <span className="firework">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </span>
+        </button>
+
+
+          {/* SVG GOOEY */}
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter id="goo">
+                <feGaussianBlur
+                  in="SourceGraphic"
+                  result="blur"
+                  stdDeviation="10"
+                />
+                <feColorMatrix
+                  in="blur"
+                  mode="matrix"
+                  values="
+                    1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 21 -7
+                  "
+                />
+                <feBlend in="SourceGraphic" />
+              </filter>
+            </defs>
+          </svg>
+        </div>
+
+        {/* FOOTER */}
         <footer className="footer">
           Hecho con amor infinito para ti ✨
         </footer>

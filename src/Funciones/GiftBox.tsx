@@ -58,7 +58,7 @@ export default function GiftBox({ canOpen }: { canOpen: boolean }) {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => navigate("/sorpresa")}
               >
-                💖 Ver sorpresa
+                Ver dentro de la caja
               </motion.button>
             </motion.div>
           )}

@@ -15,15 +15,31 @@ body {
   padding: 16px;
 }
 
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 .card {
   max-width: 720px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
   padding: 32px;
+
+  /* 🖼️ IMAGEN DE FONDO */
+  background-image: url("/FondoCardHome.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* efecto glass elegante */
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
+c
 
 .header {
   text-align: center;
@@ -154,10 +170,11 @@ body {
   padding: 12px 20px;
   border-radius: 20px;
   border: none;
-  background: #ff4081;
+  background: #b340ff85;
   color: white;
   font-size: 1rem;
   cursor: pointer;
+  width: 20vh;
 }
 
 /* 📦 CUERPO */
@@ -466,6 +483,15 @@ body {
   position: relative;
   font-family: "Georgia", serif;
 }
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* ajusta la oscuridad */
+  z-index: 0;
+}
+
 
 /* Línea superior tipo carta */
 .letter-card::before {

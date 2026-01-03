@@ -55,7 +55,7 @@ export default function ChristmasCountdown({
       <h3 className="christmas-ready">¡Ya es Navidad! 🎄✨</h3>
     ) : timeLeft.days !== undefined ? (
       <>
-        <h4 className="clock-title">Cuenta regresiva para Navidad 🎄</h4>
+        <h4 className="clock-title">Cuenta regresiva para Evento </h4>
 
         <div className="clock-grid">
           <div className="clock-box">
