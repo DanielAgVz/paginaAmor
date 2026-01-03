@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function ChristmasCountdown({
-  onChristmasReady,
+export default function MarchCountdown({
+  onReady,
 }: {
-  onChristmasReady: () => void;
+  onReady?: () => void;
 }) {
   const [timeLeft, setTimeLeft] = useState<{
     days?: number;
@@ -16,23 +16,21 @@ export default function ChristmasCountdown({
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
-      const year = now.getFullYear();
 
-      const christmasMidnight = new Date(year, 11, 25, 0, 0, 0);
+      // 📅 11 de marzo de 2026 (mes 2 porque enero = 0)
+      const targetDate = new Date(2026, 2, 11, 0, 0, 0);
 
-      const diff = christmasMidnight.getTime() - now.getTime();
+      const diff = targetDate.getTime() - now.getTime();
 
       if (diff <= 0) {
         setTimeLeft({ ready: true });
-        onChristmasReady();
+        onReady?.();
         clearInterval(interval);
         return;
       }
 
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (diff / (1000 * 60 * 60)) % 24
-      );
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
 
       if (days > 0) {
@@ -43,29 +41,28 @@ export default function ChristmasCountdown({
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [onChristmasReady]);
+  }, [onReady]);
 
   return (
-  <motion.div
-    className="christmas-clock"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-  >
-    {timeLeft.ready ? (
-      <h3 className="christmas-ready">¡Ya es Navidad! 🎄✨</h3>
-    ) : timeLeft.days !== undefined ? (
-      <>
-        <h4 className="clock-title">Dias faltantes para el evento</h4>
+    <motion.div
+      className="christmas-clock"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
+      {timeLeft.ready ? (
+        <h3 className="christmas-ready">✨ ¡Llegó el 11 de marzo! ✨</h3>
+      ) : timeLeft.days !== undefined ? (
+        <>
+          <h4 className="clock-title">Cuenta regresiva para el evento</h4>
 
-        <div className="clock-grid">
-          <div className="clock-box">
-            <span className="clock-number">{timeLeft.days}</span>
-            <span className="clock-label">Días</span>
+          <div className="clock-grid">
+            <div className="clock-box">
+              <span className="clock-number">{timeLeft.days}</span>
+              <span className="clock-label">Días</span>
+            </div>
           </div>
-        </div>
-      </>
-    ) : (
-      <>
+        </>
+      ) : (
         <div className="clock-grid">
           <div className="clock-box">
             <span className="clock-number">{timeLeft.hours}</span>
@@ -77,8 +74,7 @@ export default function ChristmasCountdown({
             <span className="clock-label">Minutos</span>
           </div>
         </div>
-      </>
-    )}
-  </motion.div>
-);
+      )}
+    </motion.div>
+  );
 }

@@ -3,7 +3,8 @@ import { Heart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 import SingleDay from "../Funciones/SingleDay";
-import ChristmasCountdown from "../Funciones/ChristmasCountdown";
+//import ChristmasCountdown from "../Funciones/ChristmasCountdown";
+import MarchCountdown from "../Funciones/MarchCountdown";
 
 import "../App.css";
 import "../styles/blobButton.css";
@@ -26,7 +27,15 @@ export default function Home() {
         <header className="header">
           <h1 className="title">
             <Heart className="heart" size={32} />
+            <Heart className="heart" size={32} />
+            <Heart className="heart" size={32} />
+            <Heart className="heart" size={32} />
+            <Heart className="heart" size={32} />
             Para el amor de mi vida
+            <Heart className="heart" size={32} />
+            <Heart className="heart" size={32} />
+            <Heart className="heart" size={32} />
+            <Heart className="heart" size={32} />
             <Heart className="heart" size={32} />
           </h1>
         </header>
@@ -34,7 +43,8 @@ export default function Home() {
         {/* CONTENIDO */}
         <SingleDay />
 
-        <ChristmasCountdown onChristmasReady={() => { }} />
+        <MarchCountdown onReady={() => console.log("Llegó el 11 de marzo")} />
+
 
         {/* BOTÓN BLOB CON NIEVE */}
         <div className="buttons">

@@ -74,7 +74,7 @@ c
 .single-day {
   margin: 24px auto;
   width: 180px;
-  background: white;
+  background: rgba(255, 255, 255, 0.329);
   border-radius: 20px;
   padding: 16px 0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
@@ -89,7 +89,7 @@ c
 .week-day {
   text-transform: capitalize;
   font-size: 0.85rem;
-  color: #9333ea;
+  color: #000000;
 }
 
 .day-number {
@@ -98,12 +98,12 @@ c
   color: #e11d48;
   line-height: 1;
   margin: 6px 0;
-  box-shadow: #374151;
+  box-shadow: #000000;
 }
 
 .month-year {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: #000000;
 }
 
 
@@ -219,7 +219,7 @@ c
 .clock-title {
   font-size: 1.1rem;
   margin-bottom: 16px;
-  color: #065f46;
+  color: #000000;
   font-weight: 600;
 }
 
