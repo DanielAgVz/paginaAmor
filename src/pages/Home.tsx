@@ -43,7 +43,7 @@ export default function Home() {
         {/* CONTENIDO */}
         <SingleDay />
 
-        <MarchCountdown onReady={() => console.log("Llegó el 11 de marzo")} />
+        <MarchCountdown onReady={() => console.log("Llegó el 14 de febrero")} />
 
 
         {/* BOTÓN BLOB CON NIEVE */}

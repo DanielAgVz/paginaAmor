@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function MarchCountdown({
+export default function FebruaryCountdown({
   onReady,
 }: {
   onReady?: () => void;
@@ -17,8 +17,8 @@ export default function MarchCountdown({
     const interval = setInterval(() => {
       const now = new Date();
 
-      // 📅 11 de marzo de 2026 (mes 2 porque enero = 0)
-      const targetDate = new Date(2026, 2, 11, 0, 0, 0);
+      // Año, Mes (0=Enero, 1=Febrero), Día
+      const targetDate = new Date(2026, 1, 17, 0, 0, 0);
 
       const diff = targetDate.getTime() - now.getTime();
 
@@ -50,10 +50,10 @@ export default function MarchCountdown({
       animate={{ opacity: 1, y: 0 }}
     >
       {timeLeft.ready ? (
-        <h3 className="christmas-ready">✨ ¡Llegó el 11 de marzo! ✨</h3>
+        <h3 className="christmas-ready">❤️ ¡Llegó el 14 de febrero! ❤️</h3>
       ) : timeLeft.days !== undefined ? (
         <>
-          <h4 className="clock-title">Cuenta regresiva para el evento</h4>
+          <h4 className="clock-title">Cuenta regresiva para San Valentín</h4>
 
           <div className="clock-grid">
             <div className="clock-box">

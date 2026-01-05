@@ -17,8 +17,8 @@ export default function ChristmasCountdown({
     const interval = setInterval(() => {
       const now = new Date();
       const year = now.getFullYear();
-
-      const christmasMidnight = new Date(year, 11, 25, 0, 0, 0);
+         {/* Mes / Dia*/}
+      const christmasMidnight = new Date(year, 2, 14, 0, 0, 0);
 
       const diff = christmasMidnight.getTime() - now.getTime();
 

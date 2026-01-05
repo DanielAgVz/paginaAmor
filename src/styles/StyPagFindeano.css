@@ -96,6 +96,66 @@
   font-size: 1.2rem;
 }
 
+/* ✉️ CONTENEDOR CARTA */
+.letter-container {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+}
+
+.letter-button {
+  font-size: 4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px gold);
+}
+
+/* 🌙 FONDO MODAL */
+.letter-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* 💌 CARTA */
+.letter-modal {
+  background: linear-gradient(135deg, #fffaf0, #ffe4e1);
+  padding: 50px 40px;
+  border-radius: 20px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(255, 182, 193, 0.6);
+  transform-style: preserve-3d;
+}
+
+.letter-modal h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.letter-modal p {
+  font-size: 1.4rem;
+  color: #b0004d;
+  font-weight: 600;
+}
+
+.spotify-link {
+  display: block;
+  margin-top: 16px;
+  padding: 12px;
+  text-align: center;
+  background: #1db954;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(29, 185, 84, 0.5);
+}
 
 
 
