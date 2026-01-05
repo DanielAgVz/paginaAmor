@@ -42,6 +42,19 @@ export default function FindeañoPag() {
 
       {/* 🟣 HERO */}
       <section className="hero-section">
+
+        {/* 🎆 FUEGOS */}
+      <div className="fireworks left">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <span key={i} />
+        ))}
+      </div>
+
+      <div className="fireworks right">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <span key={i} />
+        ))}
+      </div>
         <motion.h1
           className="newyear-title"
           style={{
@@ -52,13 +65,23 @@ export default function FindeañoPag() {
         >
           🎉 Feliz Año 🎉
         </motion.h1>
+        <motion.p
+          className="newyear-subtitle"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
+         ❤️ Amor, te amo ❤️
+        </motion.p>
+
       </section>
 
       {/* 📸 CONTENIDO */}
       <section className="scroll-section">
-        <ScrollCard img="/img/amor1.jpg" text="Cada año a tu lado es un regalo 🎁" />
-        <ScrollCard img="/img/amor2.jpg" text="Gracias por cada sonrisa compartida 💖" />
-        <ScrollCard img="/img/amor3.jpg" text="Que este nuevo año sea nuestro mejor capítulo te amo mi vida✨" />
+        <ScrollCard img="/Img/amor1.jpeg" text="Cada año a tu lado es un regalo 🎁" />
+        <ScrollCard img="/Img/amor2.jpeg" text="Gracias por cada sonrisa compartida 💖" />
+        <ScrollCard img="/Img/amor3.jpeg" text="Este es la navidad numero 3 de panchito" />
+        <ScrollCard img="/Img/amor4.jpeg" text="Que este nuevo año sea nuestro mejor capítulo mi vida, te amo mi vida✨" />
       </section>
 
     </div>
