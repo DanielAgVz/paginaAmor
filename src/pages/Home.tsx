@@ -9,6 +9,8 @@ import MarchCountdown from "../Funciones/MarchCountdown";
 import "../App.css";
 import "../styles/blobButton.css";
 import "../styles/bottonfindeano.css";
+import "../styles/gamepadButton.css";
+
 
 
 export default function Home() {
@@ -77,18 +79,44 @@ export default function Home() {
             </span>
           </button>
 
-          
-        <button 
-             className="firework-btn"
-             onClick={() => navigate("/fin-de-ano")}>
-          Ver día 31 Dic 2025
+          {/*Botton Fin de año*/}
+          <button
+            className="firework-btn"
+            onClick={() => navigate("/fin-de-ano")}>
+            Ver día 31 Dic 2025
 
-          {/* 🎆 FUEGOS ARTIFICIALES */}
-          <span className="firework">
-            <span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
-          </span>
-        </button>
+            {/* 🎆 FUEGOS ARTIFICIALES */}
+            <span className="firework">
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+            </span>
+          </button>
+
+          {/*Boton Juegos */}
+
+          <button
+            className="gamepad-btn"
+            onClick={() => navigate("/games")}
+          >
+            {/* LADO IZQUIERDO */}
+            <div className="gamepad-side left">
+              <span className="stick"></span>
+            </div>
+
+            {/* CENTRO */}
+            <div className="gamepad-center">
+              <span className="start">START</span>
+            </div>
+
+            {/* LADO DERECHO */}
+            <div className="gamepad-side right">
+              <span className="btn a"></span>
+              <span className="btn b"></span>
+              <span className="btn x"></span>
+              <span className="btn y"></span>
+            </div>
+          </button>
+
 
 
           {/* SVG GOOEY */}

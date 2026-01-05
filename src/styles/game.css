@@ -1,0 +1,18 @@
+.game-area {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px dashed #ff9ff3;
+  overflow: hidden;
+}
+
+.cat-target {
+  position: absolute;
+  font-size: 36px;
+  cursor: pointer;
+  user-select: none;
+}
