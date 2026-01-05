@@ -78,10 +78,10 @@ export default function FindeañoPag() {
 
       {/* 📸 CONTENIDO */}
       <section className="scroll-section">
-        <ScrollCard img="/Img/amor1.jpeg" text="Cada año a tu lado es un regalo 🎁" />
-        <ScrollCard img="/Img/amor2.jpeg" text="Gracias por cada sonrisa compartida 💖" />
-        <ScrollCard img="/Img/amor3.jpeg" text="Este es la navidad numero 3 de panchito" />
-        <ScrollCard img="/Img/amor4.jpeg" text="Que este nuevo año sea nuestro mejor capítulo mi vida, te amo mi vida✨" />
+        <ScrollCard img="/Img/amor1.jpeg" text="Cada año a tu lado mi cielo es un regalo 🎁" />
+        <ScrollCard img="/Img/amor2.jpeg" text="Cada sonrisa compartida contigo amor 💖" />
+        <ScrollCard img="/Img/amor3.jpeg" text="Este es la navidad numero 3 de nuestro hijo deseado" />
+        <ScrollCard img="/Img/amor4.jpeg" text="Amor que este nuevo año sea nuestro mejor capítulo mi vida, te amo mi vida✨" />
       </section>
 
     </div>
